@@ -7,7 +7,7 @@ passport.use(new GoogleStrategy({
     clientSecret: process.env.clientSecret,
     callbackURL: process.env.callbackURL,
   }, (accessToken, refreshToken, profile, done) => {
-    console.log(profile);
+    //console.log(profile);
     done(null, profile);
   }));
   
