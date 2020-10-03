@@ -22,10 +22,11 @@ app.use(passport.session());
 
 // configure passport provider options
 passport.use(new GoogleStrategy({
-  clientID: '1001460385010-l6sv2pur7vhcaigb7a0ugaao7ic8rkh3.apps.googleusercontent.com',
-  clientSecret: 'Ta1Ogd-aWfMnVUpv1HzlyNMO',
-  callbackURL: 'http://localhost:8000/auth/google/callback'
+  clientID: process.env.clientID,
+  clientSecret: process.env.clientSecret,
+  callbackURL: process.env.callbackURL,
 }, (accessToken, refreshToken, profile, done) => {
+  console.log(profile);
   done(null, profile);
 }));
 
