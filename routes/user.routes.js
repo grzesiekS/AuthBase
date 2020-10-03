@@ -25,9 +25,4 @@ router.get('/settings', isLogged, (req, res) => {
     res.render('settings');
 });
 
-router.get('/auth/logout', (req, res) => {
-    req.logout();
-    res.redirect('/user/no-permission');
-});
-
 module.exports = router;
